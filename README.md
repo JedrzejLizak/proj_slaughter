@@ -17,7 +17,7 @@ Ilość Wikingów: 1000 – 5000
 - 10% kobiet
 - 3% starców
 - 2% dzieci
-- 
+
 Ilość Słowian – 5000 - 10000
 - 30% mężczyzn
 - 35% kobiet
