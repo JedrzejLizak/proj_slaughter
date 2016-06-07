@@ -4,6 +4,6 @@
 
 Slav::Slav()
 {
-	_HP = rand() % 10 + 1;
-	_Power = rand() % 20 + 1;
+	_HP = rand() % 40 + 1;
+	_Power = rand() % 15 + 1;
 }

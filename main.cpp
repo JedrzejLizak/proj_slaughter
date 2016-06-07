@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		for (int i = 0; i < 100000; i++)
+		for (int i = 0; i < 1000000; i++)
 		{
 			Slav* fighters = new Slav[2];
 		//	Slav* fighter1 = new Viking;
@@ -86,5 +86,5 @@ int main(int argc, char *argv[])
 		}
 		break;
 	}
-
+	system("pause");
 }
