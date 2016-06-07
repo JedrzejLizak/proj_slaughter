@@ -6,7 +6,7 @@ DEADLINE: 8.06.16r.
 
 */
 
-#include <cstdlib>
+#include <stdlib.h>
 #include <iostream>
 #include <time.h>
 
@@ -38,16 +38,16 @@ int main(int argc, char *argv[])
 		//	Viking* fighter2 = new Viking;
 			int WhoDies = 0, WhoHits = rand () % 1;
 			
-		/*	for (int i = 0; i < 100; i++)
+			for (int i = 0; i < 100; i++)
 			{
-				(fighters[1 - WhoHits].HP() - fighters[WhoHits].Power());
+				( fighters[1 - WhoHits].set_HP( fighters[WhoHits].Power() ) );
 				if (fighters[1 - WhoHits].HP() <= 0)
 				{
 					break;
 				}
 				else
 				{
-				(fighters[WhoHits].HP() - fighters[1 - WhoHits].Power());
+				(fighters[WhoHits].set_HP( fighters[1 - WhoHits].Power() ) );
 				}
 				if (fighters[2].HP() < 0)
 				{
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 					break;
 				}
 			}
-		*/
+		
 
 
 			switch (WhoDies)
@@ -87,5 +87,4 @@ int main(int argc, char *argv[])
 		break;
 	}
 
-	system("pause");
 }

@@ -1,6 +1,6 @@
 #include "Slav.h"
-#include <cstdlib>
-#include <ctime>
+#include <stdlib.h>
+#include <time.h>
 
 Slav::Slav()
 {

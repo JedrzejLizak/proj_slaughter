@@ -13,4 +13,8 @@ public:
 	int HP() { return _HP; };
 	int Power() { return _Power; };
 
+	void set_HP(int dmg)
+	{
+		_HP -= dmg;
+	}
 };
