@@ -9,9 +9,9 @@ DEADLINE: 8.06.16r.
 #include <stdlib.h>
 #include <iostream>
 #include <time.h>
+#include <vector>
 
 #include "Slav.h"
-#include "Viking.h"
 
 void StateOfTheArmy(int* army1, int* army2)
 {
@@ -33,58 +33,64 @@ int main(int argc, char *argv[])
 	{
 		for (int i = 0; i < 1000000; i++)
 		{
-			Slav* fighters = new Slav[2];
-		//	Slav* fighter1 = new Viking;
-		//	Viking* fighter2 = new Viking;
-			int WhoDies = 0, WhoHits = rand () % 1;
-			
+			Slav Twardostoj, Msciwor;
+			std::vector<Slav> fighters;
+			fighters.push_back(Twardostoj);
+			fighters.push_back(Msciwor); ;
+
+			int WhoDies = 0;
 			for (int i = 0; i < 100; i++)
 			{
-				( fighters[1 - WhoHits].set_HP( fighters[WhoHits].Power() ) );
+				int WhoHits = rand() % 2;
+				fighters[1 - WhoHits].set_HP(fighters[WhoHits].Power());
 				if (fighters[1 - WhoHits].HP() <= 0)
 				{
 					break;
 				}
 				else
 				{
-				(fighters[WhoHits].set_HP( fighters[1 - WhoHits].Power() ) );
+					(fighters[WhoHits].set_HP(fighters[1 - WhoHits].Power()));
 				}
-				if (fighters[2].HP() < 0)
+				if (fighters[0].HP() <= 0)
+				{
+					WhoDies = 0;
+					break;
+				}
+				if (fighters[1].HP() <= 0)
 				{
 					WhoDies = 1;
 					break;
 				}
 			}
-		
-
+			
 
 			switch (WhoDies)
 			{
-			case 0: 
+			case 0:
 				SlavArmy--;
 				break;
-			case 1: 
+			case 1:
 				VikingArmy--;
 				break;
-			};
+			}
 
-			delete []fighters;
-					
-		if (SlavArmy == 0)
-		{
-			std::cout << "Wikingowie wygrywaja! \n";
-			StateOfTheArmy(&SlavArmy, &VikingArmy);
-			break;
-		}
-		if (VikingArmy == 0)
-		{
-			std::cout << "Slowianie wygrywaja! \n";
-			StateOfTheArmy(&SlavArmy, &VikingArmy);
-			break;
-		}
+			fighters.clear();
+
+			if (SlavArmy == 0)
+			{
+				std::cout << "Wikingowie wygrywaja! \n";
+				StateOfTheArmy(&SlavArmy, &VikingArmy);
+				break;
+			}
+			if (VikingArmy == 0)
+			{
+				std::cout << "Slowianie wygrywaja! \n";
+				StateOfTheArmy(&SlavArmy, &VikingArmy);
+				break;
+			}
 
 		}
 		break;
 	}
-	system("pause");
+	 system("pause");
 }
